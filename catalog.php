@@ -1,4 +1,6 @@
 <?php
+include("inc/data.php");
+include("inc/functions.php");
 
 $pageTitle = "Full Catalog";
 $section = null;
@@ -25,9 +27,10 @@ include("inc/header.php"); ?>
 
 		<h1><?php echo $pageTitle; ?></h1>
 
-		<ul>
-			<?php foreach($catalog as $item) {
-				echo "<li>" . $item . "</li>";
+		<ul class="items">
+			<?php 
+			foreach($catalog as $id => $item) {
+				echo get_item_html($id, $item);
 			}
 			?>
 		</ul>
